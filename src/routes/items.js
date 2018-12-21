@@ -16,9 +16,9 @@ router.get("/", (req, res) => {
 // Add item
 router.get("/add", (req, res) => {
   const data = {
-    item_name: "maiz",
-    item_cost: "30000",
-    item_units: "10",
+    item_name: "pasta",
+    item_cost: "40000",
+    item_units: "16",
     item_unit_price: "0"
   };
 
