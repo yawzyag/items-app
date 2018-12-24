@@ -1,0 +1,30 @@
+<section id="agregar">
+    <div class="form-wrap">
+        <h1>Agregar un producto</h1>
+        <hr />
+        <p>Ingresa los datos para agregar un producto</p>
+        <div class="error">
+            <p></p>
+        </div>
+        <form action="/gigs/add" method="POST" class="form">
+            <div class="input-group">
+                <label for="nombre">nombre</label>
+                <input type="text" name="nombre" id="nombre" class="input-box" placeholder="Nombre de producto"
+                    maxlength="100" value="" />
+            </div>
+
+            <div class="input-group">
+                <label for="precio">Precio de compra</label>
+                <input type="number" name="precio" id="precio" class="input-box" placeholder="eg. 500, 5000, 10000"
+                    value="" />
+            </div>
+            <div class="input-group">
+                <label for="cantidad">Cantidad o contenido</label>
+                <input type="number" name="cantidad" id="cantidad" class="input-box" placeholder="eg. 500, 5000, 10000"
+                    value="" />
+            </div>
+
+            <input type="submit" value="Agregar Producto" class="btn" />
+        </form>
+    </div>
+</section>

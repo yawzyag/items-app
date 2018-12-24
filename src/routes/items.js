@@ -7,14 +7,18 @@ const Item = require("../models/Item");
 router.get("/", (req, res) => {
   Item.findAll()
     .then(items => {
-      console.log(items);
-      res.sendStatus(200);
+      res.render("items", { items });
     })
     .catch(err => console.log(err));
 });
 
-// Add item
+// display add form
 router.get("/add", (req, res) => {
+  res.render("add");
+});
+
+// Add item
+router.post("/add", (req, res) => {
   const data = {
     item_name: "pasta",
     item_cost: "40000",

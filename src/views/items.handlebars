@@ -1,0 +1,23 @@
+<section>
+    <h1>
+        <span><i class="fas fa-sitemap"></i></i></span> Productos
+    </h1>
+
+    <div class="items-collection">
+
+        {{#each items}}
+        <div class="item">
+            <div class="item-img">
+                <img src="img/producto.png" alt="item" />
+            </div>
+            <hr>
+            <h2>{{item_name}}</h2>
+            <h3>Precio: {{item_unit_price}}</h3>
+        </div>
+        {{else }}
+        <p>Sin Productos</p>
+        {{/each}}
+
+
+    </div>
+</section>
