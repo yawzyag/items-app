@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import url("https://fonts.googleapis.com/css?family=Merriweather|Open+Sans");
 
 $color-primary: #242a30;
 
@@ -149,9 +149,12 @@ body {
   #main {
     margin: auto;
     transition: 0.5s;
-    padding: 1.3rem;
+    padding: 1rem 6rem;
     overflow: hidden;
     width: 100%;
+    @include mobile {
+      padding: 2rem;
+    }
   }
 }
 
@@ -160,6 +163,12 @@ section {
     padding: 1.8rem;
     text-align: center;
     text-transform: uppercase;
+  }
+  h3 {
+    padding: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: color(text-color);
   }
   p {
     padding: 0.2rem;
@@ -172,7 +181,7 @@ section {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     // grid-template-columns: repeat(4, 1fr);
-    grid-gap: 1rem;
+    grid-gap: 0.5rem;
     // grid-auto-rows: 12rem;
     grid-auto-rows: minmax(12rem, auto);
     // grid-column-gap: 0.5rem;
@@ -183,27 +192,52 @@ section {
     }
   }
   .item {
-    padding: 1rem;
+    position: relative;
+    padding: 0.5rem 1rem;
     border-radius: 1rem;
     box-shadow: $shadow;
     color: color(primary-dark);
+    @include mobile {
+      padding: 0.2rem;
+    }
     .item-img img {
       display: block;
       margin: auto;
       padding: 1rem;
-      width: 60%;
+      width: 50%;
       @include mobile {
         width: 70%;
       }
+    }
+    .delete-btn {
+      box-shadow: $shadow;
+      padding: 0.5rem 0.7rem;
+      position: absolute;
+      z-index: 1;
+      top: 0.5rem;
+      right: 1rem;
+      background-color: color(accent-color);
+      color: color(text-color);
+      border: none;
+      border-radius: 0.2rem;
+      @include mobile {
+        padding: 0.3rem 0.5rem;
+      }
+    }
+    .delete-btn:hover {
+      background-color: color(primary-color);
+      color: color(secondary-color);
     }
     hr {
       background-color: color(accent-color);
     }
     h2,
     h3 {
+      text-transform: capitalize;
       padding: 0.3rem;
       text-align: center;
       font-family: "Open Sans", sans-serif;
+      color: color(primary-color);
     }
   }
   .item:hover {
@@ -253,6 +287,20 @@ section {
   color: color(secondary-color);
   font-family: "Open Sans", sans-serif;
   text-transform: capitalize;
+
+  .error {
+    color: color(text-color);
+    font-family: "Merriweather", serif;
+    background-color: color(accent-color);
+    text-transform: capitalize;
+    padding: 0.4rem;
+    border: #777 dotted 1px;
+    margin-bottom: 0.9rem;
+    box-shadow: $shadow;
+    @include mobile {
+      padding: 0.1rem;
+    }
+  }
   .form {
     padding: 1rem;
     max-width: 100%;

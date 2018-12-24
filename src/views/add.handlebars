@@ -1,27 +1,33 @@
-<section id="agregar">
+<section id="add">
     <div class="form-wrap">
         <h1>Agregar un producto</h1>
         <hr />
         <p>Ingresa los datos para agregar un producto</p>
+        {{#if errors}}
+        <h3>Error</h3>
+        {{/if}}
+        {{#each errors}}
         <div class="error">
-            <p></p>
+            <p>{{text}}</p>
         </div>
-        <form action="/gigs/add" method="POST" class="form">
+        {{/each}}
+
+        <form action="/items/add" method="POST" class="form">
             <div class="input-group">
-                <label for="nombre">nombre</label>
-                <input type="text" name="nombre" id="nombre" class="input-box" placeholder="Nombre de producto"
-                    maxlength="100" value="" />
+                <label for="item_name">nombre</label>
+                <input type="text" name="item_name" id="item_name" class="input-box" placeholder="Nombre de producto"
+                    maxlength="100" value="{{item_name}}" />
             </div>
 
             <div class="input-group">
-                <label for="precio">Precio de compra</label>
-                <input type="number" name="precio" id="precio" class="input-box" placeholder="eg. 500, 5000, 10000"
-                    value="" />
+                <label for="item_cost">Precio de compra</label>
+                <input type="number" name="item_cost" id="item_cost" class="input-box" placeholder="eg. 500, 5000, 10000"
+                    value="{{item_cost}}" />
             </div>
             <div class="input-group">
-                <label for="cantidad">Cantidad o contenido</label>
-                <input type="number" name="cantidad" id="cantidad" class="input-box" placeholder="eg. 500, 5000, 10000"
-                    value="" />
+                <label for="item_units">Cantidad o contenido</label>
+                <input type="number" name="item_units" id="item_units" class="input-box" placeholder="eg. 500, 5000, 10000"
+                    value="{{item_units}}" />
             </div>
 
             <input type="submit" value="Agregar Producto" class="btn" />

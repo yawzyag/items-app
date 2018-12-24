@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import url("https://fonts.googleapis.com/css?family=Merriweather|Open+Sans");
 * {
   margin: 0;
   padding: 0;
@@ -118,15 +118,28 @@ body #main {
   margin: auto;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  padding: 1.3rem;
+  padding: 1rem 6rem;
   overflow: hidden;
   width: 100%;
+}
+
+@media (max-width: 568px) {
+  body #main {
+    padding: 2rem;
+  }
 }
 
 section h1 {
   padding: 1.8rem;
   text-align: center;
   text-transform: uppercase;
+}
+
+section h3 {
+  padding: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
 }
 
 section p {
@@ -142,7 +155,7 @@ section .items-collection {
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 1rem;
+  grid-gap: 0.5rem;
   grid-auto-rows: minmax(12rem, auto);
 }
 
@@ -154,18 +167,25 @@ section .items-collection {
 }
 
 section .item {
-  padding: 1rem;
+  position: relative;
+  padding: 0.5rem 1rem;
   border-radius: 1rem;
   -webkit-box-shadow: 0px 6px 12px 0px rgba(43, 1, 13, 0.2);
           box-shadow: 0px 6px 12px 0px rgba(43, 1, 13, 0.2);
   color: black;
 }
 
+@media (max-width: 568px) {
+  section .item {
+    padding: 0.2rem;
+  }
+}
+
 section .item .item-img img {
   display: block;
   margin: auto;
   padding: 1rem;
-  width: 60%;
+  width: 50%;
 }
 
 @media (max-width: 568px) {
@@ -174,15 +194,42 @@ section .item .item-img img {
   }
 }
 
+section .item .delete-btn {
+  -webkit-box-shadow: 0px 6px 12px 0px rgba(43, 1, 13, 0.2);
+          box-shadow: 0px 6px 12px 0px rgba(43, 1, 13, 0.2);
+  padding: 0.5rem 0.7rem;
+  position: absolute;
+  z-index: 1;
+  top: 0.5rem;
+  right: 1rem;
+  background-color: rgba(177, 24, 4, 0.801);
+  color: #fff;
+  border: none;
+  border-radius: 0.2rem;
+}
+
+@media (max-width: 568px) {
+  section .item .delete-btn {
+    padding: 0.3rem 0.5rem;
+  }
+}
+
+section .item .delete-btn:hover {
+  background-color: #242a30;
+  color: #f4f4f4;
+}
+
 section .item hr {
   background-color: rgba(177, 24, 4, 0.801);
 }
 
 section .item h2,
 section .item h3 {
+  text-transform: capitalize;
   padding: 0.3rem;
   text-align: center;
   font-family: "Open Sans", sans-serif;
+  color: #242a30;
 }
 
 section .item:hover {
@@ -239,6 +286,24 @@ section .item:hover {
   color: #f4f4f4;
   font-family: "Open Sans", sans-serif;
   text-transform: capitalize;
+}
+
+.form-wrap .error {
+  color: #fff;
+  font-family: "Merriweather", serif;
+  background-color: rgba(177, 24, 4, 0.801);
+  text-transform: capitalize;
+  padding: 0.4rem;
+  border: #777 dotted 1px;
+  margin-bottom: 0.9rem;
+  -webkit-box-shadow: 0px 6px 12px 0px rgba(43, 1, 13, 0.2);
+          box-shadow: 0px 6px 12px 0px rgba(43, 1, 13, 0.2);
+}
+
+@media (max-width: 568px) {
+  .form-wrap .error {
+    padding: 0.1rem;
+  }
 }
 
 .form-wrap .form {
